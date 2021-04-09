@@ -6,10 +6,10 @@ namespace Muistio
 {
     public class MainWindow : Window
     {
-        Button btnExit;
-        TextBlock title;
-        Button btnTallenna;
-        TextBox txtTeksti;
+        Button btnExit = new Button();
+        TextBlock title = new TextBlock();
+        Button btnTallenna = new Button();
+        TextBox txtTeksti = new TextBox();
         public MainWindow()
         {
             InitializeComponent();
