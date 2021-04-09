@@ -30,9 +30,13 @@ namespace Muistio
             title.PointerPressed += Title_PointerPressed;
         }
 
-        private void BtnTallenna_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private async void BtnTallenna_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filters.Add(new FileDialogFilter() { Name = "Txt", Extensions = { "txt" } });
+            saveFile.Filters.Add(new FileDialogFilter() { Name = "*", Extensions = { "*" } });
+            var dialogresult = await saveFile.ShowAsync(this);
+            await System.IO.File.WriteAllTextAsync(dialogresult, txtTeksti.Text);
         }
 
         private void Title_PointerPressed(object? sender, Avalonia.Input.PointerPressedEventArgs e)
