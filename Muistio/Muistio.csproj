@@ -3,6 +3,20 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
+	<UseAppHost>true</UseAppHost>
+	  <CFBundleName>Muistio</CFBundleName>
+	  <!-- Also defines .app file name -->
+	  <CFBundleDisplayName>Muistio</CFBundleDisplayName>
+	  <CFBundleIdentifier>fi.mariapori.muistio</CFBundleIdentifier>
+	  <CFBundleVersion>1.0.0</CFBundleVersion>
+	  <CFBundleShortVersionString>1.0</CFBundleShortVersionString>
+	  <CFBundlePackageType>AAPL</CFBundlePackageType>
+	  <CFBundleSignature>????</CFBundleSignature>
+	  <CFBundleExecutable>Muistio</CFBundleExecutable>
+	  <CFBundleIconFile>Muistio.icns</CFBundleIconFile>
+	  <!-- Will be copied from output directory -->
+	  <NSPrincipalClass>NSApplication</NSPrincipalClass>
+	  <NSHighResolutionCapable>true</NSHighResolutionCapable>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.10.0" />
