@@ -11,5 +11,6 @@
 		<TextBlock HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Top"  FontSize="30" Name="title">Muistio</TextBlock>
 		<TextBox HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="380" Name="txtTeksti"></TextBox>
 		<Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="2" Name="btnTallenna">Tallenna</Button>
+		<Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="2" Name="btnAvaa">Avaa</Button>
 	</Panel>
 </Window>
