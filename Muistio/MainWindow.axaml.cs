@@ -37,8 +37,14 @@ namespace Muistio
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.AllowMultiple = false;
-            openFile.Filters.Add(new FileDialogFilter() { Name = "Txt", Extensions = { "txt" } });
-            openFile.Filters.Add(new FileDialogFilter() { Name = "*", Extensions = { "*" } });
+            if (System.OperatingSystem.IsLinux() || System.OperatingSystem.IsMacOS())
+            {
+                openFile.Filters.Add(new FileDialogFilter() { Name = "*", Extensions = { "" } });
+            }
+            else
+            {
+                openFile.Filters.Add(new FileDialogFilter() { Name = "Txt", Extensions = { "txt" } });
+            }
             var valittu = await openFile.ShowAsync(this);
             if(valittu != null)
             {
@@ -49,8 +55,14 @@ namespace Muistio
         private async void BtnTallenna_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.Filters.Add(new FileDialogFilter() { Name = "Txt", Extensions = { "txt" } });
-            saveFile.Filters.Add(new FileDialogFilter() { Name = "*", Extensions = { "*" } });
+            if(System.OperatingSystem.IsLinux() || System.OperatingSystem.IsMacOS())
+            {
+                saveFile.Filters.Add(new FileDialogFilter() { Name = "*", Extensions = { "" } });
+            }
+            else
+            {
+                saveFile.Filters.Add(new FileDialogFilter() { Name = "Txt", Extensions = { "txt" } });
+            }
             var dialogresult = await saveFile.ShowAsync(this);
             if(dialogresult != null)
             {
